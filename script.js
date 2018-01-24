@@ -13,8 +13,6 @@ buttons.forEach((button) =>{
 		if(playerScore < 5 && computerScore < 5){
 			results.textContent = playRound(button.id, computerPlay());
 			score.textContent = displayScore();
-		}else{
-			winner.textContent = displayWinner();
 		}
 
 	})
@@ -32,6 +30,9 @@ function computerPlay(){
 }
 
 function displayScore(){
+	if(computerScore == 5 || playerScore == 5){
+		winner.textContent = displayWinner();
+	}
 	return "You: " + playerScore + " points \nComputer: " + computerScore + " points";
 }
 
