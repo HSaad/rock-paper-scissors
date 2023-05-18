@@ -1,1 +1,3 @@
-# rock-paper-scissors
+# Rock Paper Scissors
+
+Play a 5 round game of "Rock, Paper, Scissors" against the computer in the console. To play again, reload the page
