@@ -64,21 +64,18 @@ function getWinner(){
     }
 }
 
-function getPlayerChoice(){
-    let playerSelection = prompt("Choose: rock, paper, or scissors").toLowerCase().trim();
-
-    while(playerSelection != "rock" && playerSelection != "scissors" && playerSelection != "paper"){
-        playerSelection = prompt("Incorrect Selection. Please choose either: rock, paper, or scissors").toLowerCase().trim();
-    }
-
-    return playerSelection;
+function getPlayerChoice(e){
+    return e.target.id
 }
 
-function game() {
+function game(playerChoice) {
     // for(let i =0; i < 5; i++){
-        console.log(playRound(getPlayerChoice(), getComputerChoice()));
+        console.log(playRound(playerChoice, getComputerChoice()));
     // }
     console.log(getWinner());
 }
 
-game();
+let btns = document.querySelectorAll('button');
+btns.forEach((btn) => btn.addEventListener('click', e => game(getPlayerChoice(e))));
+
+//game();
