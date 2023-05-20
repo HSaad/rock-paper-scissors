@@ -56,26 +56,64 @@ function playRound(playerSelection, computerSelection){
 
 function getWinner(){
     if(computerScore > playerScore){
-        return `Computer Wins. Computer Score: ${computerScore},  Your Score: ${playerScore}`;
-    }else if(computerScore < playerScore ){
-        return `You Win! Computer Score: ${computerScore},  Your Score: ${playerScore}`;
-    }else {
-        return `Tie! Computer Score: ${computerScore},  Your Score: ${playerScore}`;
+        return "You Lose. Computer Wins.. Reload to restart the game";
     }
+    return "You Win!.. Reload to restart the game";
+}
+
+function refreshPage(){
+    window.location.reload();
+} 
+
+function createRestartButton(){
+    let restartButton = document.querySelector('#restart');
+
+    if (restartButton !== null) return;
+
+    restartButton = document.createElement('button');
+    let parentContainer = document.querySelector('body');
+
+    restartButton.id = "restart";
+    restartButton.textContent = "Play Again?";
+    restartButton.addEventListener('click', () => refreshPage());
+
+    parentContainer.appendChild(restartButton);
+}
+
+function getScore(){
+    return `Computer Score: ${computerScore},  Your Score: ${playerScore}`;
 }
 
 function getPlayerChoice(e){
     return e.target.id
 }
 
-function game(playerChoice) {
-    // for(let i =0; i < 5; i++){
-        console.log(playRound(playerChoice, getComputerChoice()));
-    // }
-    console.log(getWinner());
+function displayGame(result) {
+    let gameResult = document.querySelector(".game");
+    let score = document.querySelector(".score");
+
+    gameResult.textContent = result;
+    score.textContent = getScore();
 }
 
-let btns = document.querySelectorAll('button');
-btns.forEach((btn) => btn.addEventListener('click', e => game(getPlayerChoice(e))));
+function displayWinner(){
+    let winner = document.querySelector(".winner");
+    winner.textContent = getWinner();
+}
 
-//game();
+function playGame(playerChoice){
+    if(playerScore < 5 &&  computerScore < 5){
+        let result = playRound(playerChoice, getComputerChoice());
+        displayGame(result);
+    }else{
+        displayWinner();
+        createRestartButton();
+    }
+}
+
+function game(){
+    let btns = document.querySelectorAll('button');
+    btns.forEach((btn) => btn.addEventListener('click', e => playGame(getPlayerChoice(e))));
+}
+
+game();
