@@ -1,0 +1,39 @@
+* {
+    background-color: #F7F2E4;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Quicksand', sans-serif;
+    /* color: white; */
+}
+
+button {
+    border: black solid 3px;
+    border-radius: 25px;
+    background-color: transparent;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 7px;
+}
+
+#rock {
+    background-image: url("images/hand-rock.png");
+}
+
+#paper {
+    background-image: url("images/hand-paper.png");
+}
+
+#scissors {
+    background-image: url("images/hand-scissors.png");
+}
+/* 
+#restart {
+    height: 40px;
+    width: auto;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+} */
