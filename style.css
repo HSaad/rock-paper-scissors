@@ -4,8 +4,11 @@
 }
 
 h1 {
-    font-size: 36px;
-    font-family: 'Quicksand', sans-serif;
+    font-size: 45px;
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: 'Reem Kufi Fun', sans-serif;;
+    font-weight: 700;
+    color: #B48D1F;
     /* color: white; */
 }
 
@@ -13,10 +16,18 @@ button {
     border: black solid 3px;
     border-radius: 25px;
     background-color: transparent;
-    background-size: 80% 80%;
+    background-size: 70% 70%;
     background-repeat: no-repeat;
     background-position: center;
+    width: 200px;
+    height: 200px;
     margin: 7px;
+}
+
+button:hover {
+    background-size: 80% 80%;
+    border: #B48D1F solid 3px;
+    opacity: 60%;
 }
 
 #rock {
@@ -30,10 +41,36 @@ button {
 #scissors {
     background-image: url("images/hand-scissors.png");
 }
-/* 
+ 
 #restart {
-    height: 40px;
+    height: auto;
     width: auto;
-    font-size: 24px;
+    font-size: 25px;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 5px 20px;
+    border: #B48D1F solid 3px;
+    color: #B48D1F;
+} 
+
+#restart:hover {
+    color: white;
+    background-color: #B48D1F;
+    opacity: 100%;
+} 
+
+.game, .score {
     font-family: 'Quicksand', sans-serif;
-} */
+    font-weight: 400;
+    font-size: 25px;
+    padding: 7px;
+}
+
+.winner {
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    padding: 7px;
+    color: #B48D1F;
+}
