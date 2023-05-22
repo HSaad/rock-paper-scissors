@@ -56,9 +56,17 @@ function playRound(playerSelection, computerSelection){
 
 function getWinner(){
     if(computerScore > playerScore){
-        return "You Lose. Computer Wins.. Reload to restart the game";
+        return "You Lose. Computer Wins";
     }
-    return "You Win!.. Reload to restart the game";
+    return "You Win!";
+}
+
+function getScore(){
+    return `Computer Score: ${computerScore},  Your Score: ${playerScore}`;
+}
+
+function getPlayerChoice(e){
+    return e.target.id
 }
 
 function refreshPage(){
@@ -78,14 +86,6 @@ function createRestartButton(){
     restartButton.addEventListener('click', () => refreshPage());
 
     parentContainer.appendChild(restartButton);
-}
-
-function getScore(){
-    return `Computer Score: ${computerScore},  Your Score: ${playerScore}`;
-}
-
-function getPlayerChoice(e){
-    return e.target.id
 }
 
 function displayGame(result) {
